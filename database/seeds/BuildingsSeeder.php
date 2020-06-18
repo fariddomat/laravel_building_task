@@ -52,6 +52,16 @@ class BuildingsSeeder extends Seeder
         ]);
 
         Buildings::create([
+            'city' =>'latakia',
+            'town' => 'el-Amerkan',
+            'type' =>'house',
+            'price' => 150,
+            'approverd'=>true,
+            'description' => 'description for the house to view it',
+            'user_id' => '2'
+        ]);
+
+        Buildings::create([
             'city' =>'tartus',
             'town' => 'tartus',
             'type' =>'villa',
@@ -65,6 +75,16 @@ class BuildingsSeeder extends Seeder
             'town' => 'aleppo',
             'type' =>'house',
             'price' => 70,
+            'approverd'=>true,
+            'description' => 'description for the house to view it',
+            'user_id' => '2'
+        ]);
+
+        Buildings::create([
+            'city' =>'aleppo',
+            'town' => 'shikh maksoud',
+            'type' =>'house',
+            'price' => 80,
             'approverd'=>true,
             'description' => 'description for the house to view it',
             'user_id' => '2'

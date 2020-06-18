@@ -31,12 +31,13 @@ Route::group([
     Route::post('me', 'AuthControllerJWT@me');
 });
 
-
+ 
 Route::get('index', 'HomeController@index');
 Route::post('search', 'HomeController@search');
 
 
 Route::group([
+    'middleware' => ['role:owner|admin'],
     'prefix' => 'owner/buildings'
 ], function ($router) {
     Route::post('index', 'BuildingsController@index');
@@ -47,6 +48,7 @@ Route::group([
 });
 
 Route::group([
+    'middleware' => ['role:admin'],
     'prefix' => 'admin'
 ], function ($router) {
     Route::post('index', 'AdminController@index');

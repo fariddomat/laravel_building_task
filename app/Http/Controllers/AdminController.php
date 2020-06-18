@@ -20,6 +20,17 @@ class AdminController extends Controller
 {
 
     /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        
+
+    }
+
+    /**
      * show all buildings that added in the  storage
      *
      * @return \Illuminate\Http\Response
@@ -48,7 +59,7 @@ class AdminController extends Controller
     public function index()
     {
         
-        if (auth()->user()->hasRole('admin')) {
+        if (auth()->user()->hasRole('admin') != null) {
         $buildings = Buildings::all();
         return json_encode($buildings);
     }else{
